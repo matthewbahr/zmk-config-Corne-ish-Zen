@@ -13,36 +13,36 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
-                        label = "QWERTY";
+                main {
+                        label = "MAIN";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// |  TAB |  Q  |  W  |  F  |  P  |  G  |   |  J  |  L   |  U  |  Y  |  ;  |1sht 3|
+// | BACK |  A  |  R  |  S  |  T  |  D  |   |  H  |  N   |  E  |  I  |  O  |  '   |
+// |ST/ESC|  Z  |  X  |  C  |  V  |  B  |   |  K  |  M   |  ,  |  .  |  /  | ESC  |
+//                    | CTRL| SPC | ALT |   | LAY1| ENT  |LAY2 |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
+   &kp TAB          &kp Q &kp W &kp F &kp P &kp G   &kp J &kp L   &kp U     &kp Y   &kp ;    &sl 3
+   &kp BSPC         &kp A &kp R &kp S &kp T &kp D   &kp H &kp N   &kp E     &kp I   &kp O    &kp SQT
+   &mt LSHFT ESC    &kp Z &kp X &kp C &kp V &kp B   &kp K &kp M   &kp COMMA &kp DOT &kp FSLH &kp ESC
+                    &kp LCTRL &kp SPACE &kp ALT     &mo 1 &kp ENT &mo 2
+                           >;
                 };
-                lower_layer {
+                number {
                         label = "NUMBER";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |  ESC |  !   |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | HOME |
+// | DEL  |  1   |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | END  |
+// | WIN  |WINTAB|VOL V|VOL ^|     |     |   | LEFT|DOWN |  UP |RIGHT|PGDWN| PGUP |
+//                     |     |     |     |   |     |     |     |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &kp ESC  &kp EXCL      &kp AT       &kp HASH     &kp DLLR &kp PRCNT      &kp CARET &kp AMPS &kp STAR &kp LPAR  &kp RPAR  &kp HOME
+   &kp DEL  &kp N1        &kp N2       &kp N3       &kp N4   &kp N5         &kp N6    &kp N7   &kp N8   &kp N9    &kp N0    &kp END
+   &kp LGUI &kp LGUI(TAB) &kp C_VOL_UP &kp C_VOL_DN &trans   &trans         &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &kp PG_DN &kp PG_UP
+                                       &trans       &trans   &trans         &trans    &trans   &trans
                         >;
                 };
 
-                raise_layer {
+                symbol {
                         label = "SYMBOL";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
@@ -50,10 +50,24 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &trans  &kp LBRC &kp RBRC &kp LPAR  &kp RPAR &kp PRCNT   &trans    &trans    &trans    &trans   &kp STAR  &trans
+   &trans  &kp AMPS &kp PIPE &kp COLON &kp SEMI &kp DLLR    &kp PLUS  &kp MINUS &kp EQUAL &kp FSLH &kp BSLH  &trans
+   &trans  &kp LT   &kp RT   &kp LBKT  &kp RBKT &kp HASH    &kp GRAVE &kp TILDE &kp CARET &kp AT   &kp PRCNT &trans
+                    	     &trans    &trans   &trans      &trans    &trans    &trans
+                        >;
+                };
+                oneshot {
+                        label = "SHOT";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        bindings = <
+   &kp F1 &kp F2 &kp F3 &kp F4  &kp F5 &kp F6   &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+   &none  &none  &none  &none   &none  &none    &none  &none  &none  &none   &none   &none
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &kp C_PREV &kp C_PP &kp C_NEXT &kp K_APP &kp ALT(PSCRN) &kp PSCRN
+                    	     &trans    &trans   &trans      &trans    &trans    &trans
                         >;
                 };
         };

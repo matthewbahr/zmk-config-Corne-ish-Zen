@@ -21,7 +21,7 @@
 // |ST/ESC|  Z  |  X  |  C  |  V  |  B  |   |  K  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | CTRL| SPC | ALT |   | LAY1| ENT  |LAY2 |
                         bindings = <
-   &kp TAB          &kp Q &kp W &kp F &kp P &kp G   &kp J &kp L   &kp U     &kp Y   &kp ;    &sl 3
+   &kp TAB          &kp Q &kp W &kp F &kp P &kp G   &kp J &kp L   &kp U     &kp Y   &kp SEMI &sl 3
    &kp BSPC         &kp A &kp R &kp S &kp T &kp D   &kp H &kp N   &kp E     &kp I   &kp O    &kp SQT
    &mt LSHFT ESC    &kp Z &kp X &kp C &kp V &kp B   &kp K &kp M   &kp COMMA &kp DOT &kp FSLH &kp ESC
                     &kp LCTRL &kp SPACE &kp ALT     &mo 1 &kp ENT &mo 2

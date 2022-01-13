@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 &mt {
-    tapping_term_ms = <200>;
+    tapping_term_ms = <100>;
 };
 
 &sl {
@@ -25,15 +25,15 @@
                 default_layer {
                         label = "MAIN";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  F  |  P  |  G  |   |  J  |  L   |  U  |  Y  |  ;  |1sht 3|
-// | BACK |  A  |  R  |  S  |  T  |  D  |   |  H  |  N   |  E  |  I  |  O  |  '   |
-// |ST/ESC|  Z  |  X  |  C  |  V  |  B  |   |  K  |  M   |  ,  |  .  |  /  | ESC  |
+// |  TAB |  Q  |  W  |  F  |  P  |  B |   |  J  |  L   |  U  |  Y  |  ;  |1sht 3|
+// | BACK |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
+// |ST/ESC|  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
 //                    | CTRL| SPC | ALT |   | LAY1| ENT  |LAY2 |
                         bindings = <
-   &kp TAB          &kp Q &kp W &kp F &kp P &kp G   &kp J &kp L   &kp U     &kp Y   &kp SEMI &sl 3
-   &kp BSPC         &kp A &kp R &kp S &kp T &kp D   &kp H &kp N   &kp E     &kp I   &kp O    &kp SQT
-   &mt LSHFT ESC    &kp Z &kp X &kp C &kp V &kp B   &kp K &kp M   &kp COMMA &kp DOT &kp FSLH &mt RSHFT ESC
-                    &kp LCTRL &kp SPACE &kp LALT     &mo 1 &kp RET &mo 2
+   &kp TAB          &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L   &kp U     &kp Y   &kp SEMI &sl 3
+   &kp BSPC         &kp A &kp R &kp S &kp T &kp G   &kp M &kp N   &kp E     &kp I   &kp O    &kp SQT
+   &mt LSHFT ESC    &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H   &kp COMMA &kp DOT &kp FSLH &mt RSHFT ESC
+                    &kp LCTRL &kp SPACE &mo 1           &kp LALT &kp RET &mo 2
                            >;
                 };
                 number_layer {

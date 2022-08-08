@@ -1,3 +1,5 @@
+Note to self: Bootloader is double tap on reset button to access. 
+
 # Corne-ish Zen Custom Configuration
 
 ![Corne-ish Zen Logo](zenlogo.png)
